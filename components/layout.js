@@ -4,7 +4,6 @@ import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import Avatar from '@mui/material/Avatar';
 import CssBaseline from '@mui/material/CssBaseline';
-import Image from 'next/image'
 
 const name = 'Seven23'
 export const siteTitle = 'Seven23 - Blog'

@@ -105,7 +105,6 @@ header.homepage, header.legals {
     div#title {
         display: flex;
         flex-grow: 1;
-        max-width: 1400px;
         margin: auto;
 
         @media screen and (max-width: $mediumScreen - 1px) {
@@ -183,7 +182,6 @@ header.homepage, header.legals {
     nav {
         width: 100%;
         padding: 20px 17px;
-        max-width: 1400px;
         margin: auto;
         ul {
             padding: 0;
@@ -214,8 +212,8 @@ header.homepage, header.legals {
         background: rgba(180, 185, 190, 0.05);
         padding: 40px 20px 30px;
 
+
         h2, ul {
-            max-width: 1400px;
             margin: auto;
         }
         li {
@@ -237,11 +235,10 @@ header.homepage, header.legals {
         padding: 40px 0px 0px;
 
         h2, ul.thumbnails {
-            max-width: 1400px;
             margin: auto;
         }
         h2 {
-            padding: 0 0 40px 58px;
+            padding: 0 0 40px 20px;
             @media screen and (max-width: $mediumScreen - 1px) {
                 padding: 0 0 0px 58px;
             }
@@ -291,27 +288,9 @@ header.homepage, header.legals {
         background: rgba(180, 185, 190, 0.15);
         padding: 40px 20px 30px;
 
-        h2, ul {
-            max-width: 1400px;
-            margin: auto;
-        }
+        .price {
 
-        li {
-            flex: 50%;
-            display: flex;
-            flex-direction: column;
-
-            @media screen and (min-width: $smallScreen) and (max-width: $mediumScreen - 1px) {
-                flex: 100%;
-                padding: 30px 40px;
-            }
-
-            @media screen and (max-width: $smallScreen - 1px) {
-                flex: 100%;
-                padding: 20px 0px;
-                &:first-child div { padding-top: 14px; }
-            }
-
+            padding: 40px 20px 30px;
             h3 + p {
                 flex-grow: 1;
             }
@@ -378,9 +357,7 @@ header.homepage, header.legals {
         padding: 40px 20px 30px;
 
         h2, h3, p {
-            max-width: 1400px;
             margin: auto;
-            padding-left: 38px;
 
             @media screen and (max-width: $smallScreen - 1px) {
                 padding-left: 0px;
@@ -395,9 +372,7 @@ header.homepage, header.legals {
         padding: 40px 20px 30px;
 
         h2, p {
-            max-width: 1400px;
             margin: auto;
-            padding-left: 38px;
 
             @media screen and (max-width: $smallScreen - 1px) {
                 padding-left: 0px;
@@ -413,7 +388,7 @@ header.homepage, header.legals {
 
         h2 {
             font-size: 3.2em;
-            padding: 0 0 20px 38px;
+            padding: 0 0 20px 0px;
             margin: 0em 0 0;
             letter-spacing: -2px;
                     font-weight: 700;
@@ -434,7 +409,7 @@ header.homepage, header.legals {
             padding: 0 0 0.8em;
             margin: 0em 0 0;
             letter-spacing: -1px;
-                    font-weight: 700;
+            sfont-weight: 700;
 
             @media screen and (max-width: $mediumScreen - 1px) {
                 font-size: 22px;
@@ -508,17 +483,15 @@ header.homepage, header.legals {
 }
 
 footer {
-    width: 100vw;
     background: rgba(180, 185, 190, 0.3);
-    padding: 0;
     div.wrapper {
-        max-width: 1400px;
         margin: auto;
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        padding-left: 38px;
+        padding-left: 40px;
+
 
         @media screen and (max-width: $smallScreen - 1px) {
             flex-direction: column;

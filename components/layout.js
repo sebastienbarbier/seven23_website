@@ -3,6 +3,8 @@ import styles from './layout.module.scss'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 
+import Container from '@mui/material/Container';
+
 const name = 'Seven23'
 export const siteTitle = 'Seven23 - Blog'
 
@@ -42,7 +44,7 @@ export default function Layout({ children, home }) {
         {children}
       </main>
       <footer>
-        <div className="wrapper">
+        <Container maxWidth="xl" className="wrapper">
           <div>
               <ul>
                   <li><a href="/">Home</a></li>
@@ -55,7 +57,7 @@ export default function Layout({ children, home }) {
               </ul>
           </div>
           <p>Developed by<br /><a href="https://sebastienbarbier.com" target="_blank">sebastienbarbier</a></p>
-        </div>
+        </Container>
       </footer>
     </div>
   )

@@ -11,6 +11,7 @@ import { getTermsData } from '../lib/posts'
 import utilStyles from '../styles/utils.module.css'
 
 import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
 
 export async function getStaticProps() {
   const terms = await getTermsData()
@@ -78,37 +79,45 @@ export default function Home({ terms }) {
   return (
     <Layout home>
       <section id="features">
+        <Container maxWidth="xl">
           <h2>Features</h2>
-          <ul>
-              <li>
+          <Grid container spacing={8}>
+            <Grid item md={12} lg={6}>
                   <h3>Monthly based transactions</h3>
                   <p><strong>Categorize your transactions</strong> and review as a <strong>monthly timeline</strong> to manage your budget. You can then <strong>review them per category</strong> to help understand where your money goes</p>
                   <img src="/images/01-transactions-desktop-light.png" alt="" />
-              </li>
-              <li>
+
+            </Grid>
+            <Grid item md={12} lg={6}>
                   <h3>Multi currency</h3>
                   <p>Each transaction is registered using <strong>its original currency</strong>, then based on a list of past exchanges the app <strong>automatically convert</strong> them in the currency of your choice. You can <strong>switch currency</strong> as you wish.</p>
                   <img src="/images/01-change-desktop-light.png" alt="" />
-              </li>
-              <li>
+            </Grid>
+
+            <Grid item md={12} lg={4}>
                   <h3>Privacy by design</h3>
                   <p><strong>End-to-end encryption</strong> with an <strong>opensource</strong> code base to  guaranty confidentiality of your data..</p>
-              </li>
-              <li>
+            </Grid>
+
+            <Grid item md={12} lg={4}>
                   <h3>Sync across devices</h3>
                   <p>This is a web application which works on <strong>phone, tablet and desktop</strong>. Can also be used <strong>offline</strong> then synced.</p>
-              </li>
-              <li>
+            </Grid>
+
+            <Grid item md={12} lg={4}>
                   <h3>Reporting</h3>
                   <p><strong>Browse and analyse</strong> your data to generate a report and <strong>compare</strong> different budgets.</p>
-              </li>
-              <li>
+            </Grid>
+            
+            <Grid item md={12} lg={12}>
                   <p><strong>Also include</strong>: 👥 multi-account, 💱 Convertor, 🌗 dark mode, 📥 import/export, 💚 opensource, 👩‍💻 API access, 🏠 Self-hostable.</p>
                   <p><strong>And more to come</strong>: 🔑 Two-factor authentication, 🗄 tags, 🖇 attached files, 👬👬 shared budget, 📊 public profile, 🌏 locations, 🐑 social networks, and 🇫🇷 multi-langage.</p>
-              </li>
-          </ul>
+            </Grid>
+          </Grid>
+        </Container>
       </section>
       <section id="gallery">
+        <Container maxWidth="xl">
           <h2>Gallery</h2>
           <div className="gallery">
 
@@ -154,29 +163,33 @@ export default function Home({ terms }) {
               </ul>
             </div>
         </div>
+        </Container>
       </section>
       <section id="pricing">
+        <Container maxWidth="xl">
           <h2>Pricing</h2>
-          <ul>
-              <li>
-                  <h3>Self hosted</h3>
-                  <p>Install on your own server at <strong>no extra cost</strong> and use the <strong>official app</strong> to access it. We even provide a <strong>one-click install</strong> for a few cloud plateform to make the process easier.</p>
-                  <div>
-                      <p>0<span>€</span><small>/ forever</small></p>
-                      <a href="https://seven23-server.readthedocs.io/en/latest/index.html">See documentation</a>
-                  </div>
-              </li>
-              <li>
-                  <h3>As a Service</h3>
-                  <p>If you do not want to be in change of your own instance, we provide an <strong>official version</strong> as this website. We will perform <strong>maintenance</strong> and <strong>backups</strong> for you in exchange of a <strong>yearly subscription</strong>.</p>
-                  <p className="trial_period">After a {terms.trial_period}-day trial period</p>
-                  <div>
-                      <p>{terms ? terms.products[0].price : '--'}<span>€</span><small>/ year</small></p>
-                  </div>
-              </li>
-          </ul>
+          <Grid container spacing={2}>
+            <Grid item md={12} lg={6} className="price">
+              <h3>Self hosted</h3>
+              <p>Install on your own server at <strong>no extra cost</strong> and use the <strong>official app</strong> to access it. We even provide a <strong>one-click install</strong> for a few cloud plateform to make the process easier.</p>
+              <div>
+                  <p>0<span>€</span><small>/ forever</small></p>
+                  <a href="https://seven23-server.readthedocs.io/en/latest/index.html">See documentation</a>
+              </div>
+            </Grid>
+            <Grid item md={12} lg={6} className="price">
+              <h3>As a Service</h3>
+              <p>If you do not want to be in change of your own instance, we provide an <strong>official version</strong> as this website. We will perform <strong>maintenance</strong> and <strong>backups</strong> for you in exchange of a <strong>yearly subscription</strong>.</p>
+              <p className="trial_period">After a {terms.trial_period}-day trial period</p>
+              <div>
+                  <p>{terms ? terms.products[0].price : '--'}<span>€</span><small>/ year</small></p>
+              </div>
+            </Grid>
+          </Grid>
+        </Container>
       </section>
       <section id="faq">
+        <Container maxWidth="xl">
           <h2>FAQ</h2>
           <h3>Who is behind Seven23 ?</h3>
           <p>My name is <strong>Sébastien Barbier</strong>, I am a french developer who developed Seven23 as a <strong>side-project</strong> to help me track my expenses. After way too many years of work, as the application was taking shapes I decided to open it and build an hosting offer to help financing its development. <strong>I personnaly use it on daily basis</strong> so you can be sure <strong>I will take good care of it</strong>.</p>
@@ -186,10 +199,13 @@ export default function Home({ terms }) {
           <p>Confidential data are encrypted <strong>on your device</strong> when sended to our server using JSON Web Encryption (JWE), and in <strong>all communication</strong> using HTTPS. <strong>We do not have access to your data</strong>. However, they need to be stored <strong>unencrypted on your device</strong> to run in-app. Meaning if someone access your device, this person can access your data.</p>
           <h3>Can I help and constribute ?</h3>
           <p><strong>We love community feedback</strong> and are glad to review contributions of any size - from typos in the documentation to critical bug fixes - so don’t be shy!</p>
+        </Container>
       </section>
       <section id="contact">
+        <Container maxWidth="xl">
           <h2>Contact</h2>
           <p>If any questions or any needs, you can reach to me by <a href="mailto:seven23@sebastienbarbier.com">email</a> or over <a target="_blank" href="https://twitter.com/SebBarbier">twitter</a>.</p>
+        </Container>
       </section>
     </Layout>
   )

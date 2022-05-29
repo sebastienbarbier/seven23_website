@@ -11,6 +11,8 @@ import Date from '../components/date'
 import { getTermsData } from '../lib/posts'
 import utilStyles from '../styles/utils.module.css'
 
+import Container from '@mui/material/Container'
+
 export async function getStaticProps() {
   const terms = await getTermsData()
   return {
@@ -23,7 +25,8 @@ export async function getStaticProps() {
 export default function Home({ terms }) {
   return (
     <Layout>
-      <section id="terms">
+      <Container maxWidth="md">
+
         <h2>Legals & Copyright</h2>
 
         <h3>Author</h3>
@@ -45,7 +48,7 @@ export default function Home({ terms }) {
         <p>Application and website is licensed under a MIT licence.</p>
 
         { terms ? <div dangerouslySetInnerHTML={{__html: terms.terms_and_conditions}}></div> : <div></div> }
-      </section>
+      </Container>
     </Layout>
   )
 }

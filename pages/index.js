@@ -3,13 +3,14 @@ import Link from 'next/link'
 
 import * as React from 'react';
 import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
 
 import Layout, { siteTitle } from '../components/layout'
 import Date from '../components/date'
 
 import { getTermsData } from '../lib/posts'
 import utilStyles from '../styles/utils.module.css'
+
+import Container from '@mui/material/Container';
 
 export async function getStaticProps() {
   const terms = await getTermsData()
@@ -77,35 +78,35 @@ export default function Home({ terms }) {
   return (
     <Layout home>
       <section id="features">
-        <h2>Features</h2>
-        <ul>
-            <li>
-                <h3>Monthly based transactions</h3>
-                <p><strong>Categorize your transactions</strong> and review as a <strong>monthly timeline</strong> to manage your budget. You can then <strong>review them per category</strong> to help understand where your money goes</p>
-                <img src="/images/01-transactions-desktop-light.png" alt="" />
-            </li>
-            <li>
-                <h3>Multi currency</h3>
-                <p>Each transaction is registered using <strong>its original currency</strong>, then based on a list of past exchanges the app <strong>automatically convert</strong> them in the currency of your choice. You can <strong>switch currency</strong> as you wish.</p>
-                <img src="/images/01-change-desktop-light.png" alt="" />
-            </li>
-            <li>
-                <h3>Privacy by design</h3>
-                <p><strong>End-to-end encryption</strong> with an <strong>opensource</strong> code base to  guaranty confidentiality of your data..</p>
-            </li>
-            <li>
-                <h3>Sync across devices</h3>
-                <p>This is a web application which works on <strong>phone, tablet and desktop</strong>. Can also be used <strong>offline</strong> then synced.</p>
-            </li>
-            <li>
-                <h3>Reporting</h3>
-                <p><strong>Browse and analyse</strong> your data to generate a report and <strong>compare</strong> different budgets.</p>
-            </li>
-            <li>
-                <p><strong>Also include</strong>: 👥 multi-account, 💱 Convertor, 🌗 dark mode, 📥 import/export, 💚 opensource, 👩‍💻 API access, 🏠 Self-hostable.</p>
-                <p><strong>And more to come</strong>: 🔑 Two-factor authentication, 🗄 tags, 🖇 attached files, 👬👬 shared budget, 📊 public profile, 🌏 locations, 🐑 social networks, and 🇫🇷 multi-langage.</p>
-            </li>
-        </ul>
+          <h2>Features</h2>
+          <ul>
+              <li>
+                  <h3>Monthly based transactions</h3>
+                  <p><strong>Categorize your transactions</strong> and review as a <strong>monthly timeline</strong> to manage your budget. You can then <strong>review them per category</strong> to help understand where your money goes</p>
+                  <img src="/images/01-transactions-desktop-light.png" alt="" />
+              </li>
+              <li>
+                  <h3>Multi currency</h3>
+                  <p>Each transaction is registered using <strong>its original currency</strong>, then based on a list of past exchanges the app <strong>automatically convert</strong> them in the currency of your choice. You can <strong>switch currency</strong> as you wish.</p>
+                  <img src="/images/01-change-desktop-light.png" alt="" />
+              </li>
+              <li>
+                  <h3>Privacy by design</h3>
+                  <p><strong>End-to-end encryption</strong> with an <strong>opensource</strong> code base to  guaranty confidentiality of your data..</p>
+              </li>
+              <li>
+                  <h3>Sync across devices</h3>
+                  <p>This is a web application which works on <strong>phone, tablet and desktop</strong>. Can also be used <strong>offline</strong> then synced.</p>
+              </li>
+              <li>
+                  <h3>Reporting</h3>
+                  <p><strong>Browse and analyse</strong> your data to generate a report and <strong>compare</strong> different budgets.</p>
+              </li>
+              <li>
+                  <p><strong>Also include</strong>: 👥 multi-account, 💱 Convertor, 🌗 dark mode, 📥 import/export, 💚 opensource, 👩‍💻 API access, 🏠 Self-hostable.</p>
+                  <p><strong>And more to come</strong>: 🔑 Two-factor authentication, 🗄 tags, 🖇 attached files, 👬👬 shared budget, 📊 public profile, 🌏 locations, 🐑 social networks, and 🇫🇷 multi-langage.</p>
+              </li>
+          </ul>
       </section>
       <section id="gallery">
           <h2>Gallery</h2>
@@ -116,8 +117,8 @@ export default function Home({ terms }) {
 
               <ul className="thumbnails">
                 { PHOTOS.map((photo, index) => (
-                  <li>
-                      <label for={`gallery-${index}`}>
+                  <li key={index}>
+                      <label htmlFor={`gallery-${index}`}>
                          <img src={ photo.small } alt={ photo.alt } />
                       </label>
                   </li>
@@ -127,24 +128,24 @@ export default function Home({ terms }) {
 
             <div className="gallery_fullscreen">
               <header>
-                <label for="no_gallery">
+                <label htmlFor="no_gallery">
                   <svg height="32px" version="1.1" viewBox="0 0 512 512" width="32px"><path className="svgFillWhite" d="M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4  L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1  c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1  c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z"/></svg>
                 </label>
               </header>
               <ul>
                 { PHOTOS.map((photo, index) => (
-                  <li>
+                  <li key={index}>
                       <input type="radio" name="gallery" id={`gallery-${index}`} />
                       <div className="viewer">
                         <img src={photo.large} alt={ photo.alt } />
                         <div className="previous">
                         {(() => {
-                          if (index != 0) return <label for={`gallery-${index-1}`}></label>
+                          if (index != 0) return <label htmlFor={`gallery-${index-1}`}></label>
                         })()}
                         </div>
                         <div className="next">
                           {(() => {
-                            if (index != PHOTOS.length-1) return <label for={`gallery-${index+1}`}></label>
+                            if (index != PHOTOS.length-1) return <label htmlFor={`gallery-${index+1}`}></label>
                           })()}
                         </div>
                       </div>

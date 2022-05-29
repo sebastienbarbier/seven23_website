@@ -208,7 +208,7 @@ header.homepage, header.legals {
 }
 
 
-main {
+.main {
 
     #features {
         background: rgba(180, 185, 190, 0.05);
@@ -409,120 +409,101 @@ main {
         }
     }
 
-    #terms {
-        padding: 50px 20px;
+    #features, #pricing {
 
-        max-width: 1400px;
-        margin: auto;
         h2 {
-            padding-left: 0;
-            padding-top: 40px;
-        }
-        h3 {
-            padding-top: 20px;
-        }
-        ul {
-            list-style: disc;
-            display: block;
-            padding: 10px 0 20px 30px;
-            font-weight: 300;
-            font-size: 1em;
-            li { padding: 0 0 0 5px; }
-        }
-        ol { li { padding-bottom: 4px; }}
-    }
-
-    h2 {
-        font-size: 3.2em;
-        padding: 0 0 20px 38px;
-        margin: 0em 0 0;
-        letter-spacing: -2px;
-                font-weight: 700;
-
-        @media screen and (max-width: $mediumScreen - 1px) {
-            font-size: 36px;
+            font-size: 3.2em;
+            padding: 0 0 20px 38px;
+            margin: 0em 0 0;
             letter-spacing: -2px;
-            padding: 0 0 0px 38px;
-        }
+                    font-weight: 700;
 
-        @media screen and (max-width: $smallScreen - 1px) {
-            padding: 0;
-        }
-    }
-
-    h3 {
-        font-size: 1.8em;
-        padding: 0 0 0.8em;
-        margin: 0em 0 0;
-        letter-spacing: -1px;
-                font-weight: 700;
-
-        @media screen and (max-width: $mediumScreen - 1px) {
-            font-size: 22px;
-            letter-spacing: -2px;
-        }
-    }
-
-    p {
-        font-weight: 300;
-        font-size: 1.1em;
-        font-weight: 300;
-        margin: 0 0 0 0;
-        letter-spacing: -0.3px;
-
-        @media screen and (max-width: $mediumScreen - 1px) {
-            font-size: 1em;
-            margin: 0;
-        }
-
-        strong {
-                font-weight: 700;
-            font-size: 1.05em;
-            letter-spacing: -1px;
-        }
-    }
-    p + p {
-        margin-top: 4px;
-    }
-
-
-    ul {
-        list-style: none;
-        padding: 0;
-
-        display: flex;
-        flex-wrap: wrap;
-        li {
-
-            @media screen and (min-width: $mediumScreen) {
-                &:first-child, &:nth-child(2) {
-                    flex: 50%;
-                    padding: 30px 40px 60px;
-                }
-                flex: 33.3%;
-                padding: 50px 40px 50px;
-                &:last-child {
-                    flex: 100%;
-                }
-            }
-
-            @media screen and (min-width: $smallScreen) and (max-width: $mediumScreen - 1px) {
-                flex: 100%;
-                padding: 30px 40px;
-
-                &:nth-child(2) { padding-bottom: 60px; }
-                &:last-child { padding-top: 60px; }
+            @media screen and (max-width: $mediumScreen - 1px) {
+                font-size: 36px;
+                letter-spacing: -2px;
+                padding: 0 0 0px 38px;
             }
 
             @media screen and (max-width: $smallScreen - 1px) {
-                flex: 100%;
-                padding: 20px 0px;
-                font-size: 1rem;
-
-                &:nth-child(2) { padding-bottom: 60px; }
-                &:last-child { padding-top: 60px; }
+                padding: 0;
             }
         }
+
+        h3 {
+            font-size: 1.8em;
+            padding: 0 0 0.8em;
+            margin: 0em 0 0;
+            letter-spacing: -1px;
+                    font-weight: 700;
+
+            @media screen and (max-width: $mediumScreen - 1px) {
+                font-size: 22px;
+                letter-spacing: -2px;
+            }
+        }
+
+        p {
+            font-weight: 300;
+            font-size: 1.1em;
+            font-weight: 300;
+            margin: 0 0 0 0;
+            letter-spacing: -0.3px;
+
+            @media screen and (max-width: $mediumScreen - 1px) {
+                font-size: 1em;
+                margin: 0;
+            }
+
+            strong {
+                    font-weight: 700;
+                font-size: 1.05em;
+                letter-spacing: -1px;
+            }
+        }
+        p + p {
+            margin-top: 4px;
+        }
+
+
+        ul {
+            list-style: none;
+            padding: 0;
+
+            display: flex;
+            flex-wrap: wrap;
+            li {
+
+                @media screen and (min-width: $mediumScreen) {
+                    &:first-child, &:nth-child(2) {
+                        flex: 50%;
+                        padding: 30px 40px 60px;
+                    }
+                    flex: 33.3%;
+                    padding: 50px 40px 50px;
+                    &:last-child {
+                        flex: 100%;
+                    }
+                }
+
+                @media screen and (min-width: $smallScreen) and (max-width: $mediumScreen - 1px) {
+                    flex: 100%;
+                    padding: 30px 40px;
+
+                    &:nth-child(2) { padding-bottom: 60px; }
+                    &:last-child { padding-top: 60px; }
+                }
+
+                @media screen and (max-width: $smallScreen - 1px) {
+                    flex: 100%;
+                    padding: 20px 0px;
+                    font-size: 1rem;
+
+                    &:nth-child(2) { padding-bottom: 60px; }
+                    &:last-child { padding-top: 60px; }
+                }
+            }
+        }
+
     }
 }
 

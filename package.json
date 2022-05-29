@@ -8,10 +8,11 @@
     "deploy": "./scripts/deploy.sh"
   },
   "dependencies": {
-    "@emotion/react": "^11.8.2",
+    "@emotion/react": "^11.9.0",
+    "@emotion/server": "^11.4.0",
     "@emotion/styled": "^11.8.1",
     "@mdx-js/loader": "^2.1.0",
-    "@mui/material": "^5.5.1",
+    "@mui/material": "^5.8.1",
     "@mui/styled-engine-sc": "^5.4.2",
     "@next/mdx": "^12.1.0",
     "child_process": "^1.0.2",

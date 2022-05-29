@@ -24,4 +24,6 @@ if [ -z "$OS_REGION_NAME" ]; then unset OS_REGION_NAME; fi
 
 # swift list blog
 cd out
+
+cp 404/index.html 404error.html
 swift upload website . --changed --skip-identical

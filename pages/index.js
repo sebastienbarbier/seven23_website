@@ -204,7 +204,7 @@ export default function Home({ terms }) {
       <section id="contact">
         <Container maxWidth="xl">
           <h2>Contact</h2>
-          <p>If any questions or any needs, you can reach to me by <a href="mailto:seven23@sebastienbarbier.com">email</a> or over <a target="_blank" href="https://twitter.com/SebBarbier">twitter</a>.</p>
+          <p>If any questions or any needs, you can reach to me by <a href="mailto:contact@seven23.io">email</a> or over <a target="_blank" href="https://twitter.com/Seven23_app">twitter</a>.</p>
         </Container>
       </section>
     </Layout>

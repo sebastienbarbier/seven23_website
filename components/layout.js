@@ -49,7 +49,8 @@ export default function Layout({ children, home }) {
               <ul>
                   <li><a href="/">Home</a></li>
                   <li><a target="_blank" href="https://github.com/sebastienbarbier/seven23">Github</a></li>
-                  <li><a target="_blank" href="https://seven23-server.readthedocs.io/en/latest/">Documentation</a></li>
+                  <li><a target="_blank" href="https://seven23.readthedocs.io/en/latest/">Documentation</a></li>
+                  <li><a target="_blank" href="https://blog.seven23.io/">Blog</a></li>
                   <li><a target="_blank" href="https://status.seven23.io/">Status</a></li>
                   <li><a target="_blank" href="https://twitter.com/seven23_app">Twitter</a></li>
                   <li><a target="_blank" href="https://github.com/sebastienbarbier/seven23_webapp/issues">Issue tracker</a></li>

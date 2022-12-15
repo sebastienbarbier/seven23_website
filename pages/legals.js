@@ -22,10 +22,10 @@ export async function getStaticProps() {
   }
 }
 
-export default function Home({ terms }) {
+export default function Legals({ terms }) {
   return (
     <Layout>
-      <Container maxWidth="md">
+      <Container>
 
         <h2>Legals & Copyright</h2>
 

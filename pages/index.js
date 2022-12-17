@@ -47,22 +47,22 @@ export default function Home() {
         </section>
         {/* Responsive web application with offline capacity */}
 
-        <Grid container spacing={8}>
+        <Grid spacing={8}>
           <Grid item xs={12}>
             <h2>We keep it simple and stupid</h2>
           </Grid>
         </Grid>
         <Grid container spacing={8}>
           <Grid item xs={12}>
-            Our application is a simple and straightforward tool for tracking personal expenses. It allows you to keep a record of all your transactions, organized by category. One of the unique features of our app is the ability to manually enter exchange rates and view all your transactions in a currency of your choice. This can be especially helpful for those who travel frequently or need to track expenses in multiple currencies. 
+            This application is a simple and straightforward tool for tracking personal expenses. It allows you to keep a record of all your transactions, organized by category. One of the unique features of our app is the ability to manually enter exchange rates and view all your transactions in a currency of your choice. This can be especially helpful for those who travel frequently or need to track expenses in multiple currencies. 
           </Grid>
           <Grid item xs={6}>
             <EnhancedEncryptionIcon sx={{ fontSize: 60 }} />
-            <p>Our application provides secure end-to-end encryption and an open source code base to protect the confidentiality of your data. This ensures that only you can access the communication and data within the application.</p>
+            <p>We provides secure end-to-end encryption and an open source code base to protect the confidentiality of your data. This ensures that only you can access the communication and data within the application.</p>
           </Grid>
           <Grid item xs={6}>
             <DevicesIcon sx={{ fontSize: 60 }} />
-            <p>Our app is designed as a responsive web app with offline capacity. It can be accessed on any device with a web browser, including phones, tablets, and desktop computers. No matter where you are, or if you don't have an internet connection.</p>
+            <p>Seven23 is a responsive web app with offline capacity. It can be accessed on any device with a web browser, including phones, tablets, and desktop computers. No matter where you are, or if you don't have an internet connection.</p>
           </Grid>
           <Grid item xs={12} container direction="column" justifyContent="center" alignItems="center">
             <Button href="/product" style={{float: 'right' }} variant="outlined" disableElevation>See all features</Button>

@@ -15,6 +15,14 @@ import utilStyles from '../styles/utils.module.css'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+
+import Typography from '@mui/material/Typography';
+
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
 export async function getStaticProps() {
   const terms = await getTermsData()
   return {
@@ -23,6 +31,21 @@ export async function getStaticProps() {
     }
   }
 }
+
+const FAQ = [
+  {
+    q: 'Can I connect and automatically sync my bank account ?',
+    a: '<strong>No</strong>, this is the main request from users, but our philisophy is to keep the app fully manual.',
+  },
+  {
+    q: 'Are my data encrypted ?',
+    a: 'Confidential data are encrypted <strong>on your device</strong> when sended to our server using JSON Web Encryption (JWE), and in <strong>all communication</strong> using HTTPS. <strong>We do not have access to your data</strong>. However, they need to be stored <strong>unencrypted on your device</strong> to run in-app. Meaning if someone access your device, this person can access your data.',
+  },
+  {
+    q: 'Can I help and constribute ?',
+    a: '<strong>We love community feedback</strong> and are glad to review contributions of any size - from typos in the documentation to critical bug fixes - so don’t be shy!',
+  }
+];
 
 export default function Pricing({ terms }) {
   return (
@@ -52,14 +75,22 @@ export default function Pricing({ terms }) {
         <p>10% goes directly to projects we love</p>
 
         <h2>FAQ</h2>
-        <h3>Who is behind Seven23 ?</h3>
-        <p>My name is <strong>Sébastien Barbier</strong>, I am a french developer who developed Seven23 as a <strong>side-project</strong> to help me track my expenses. After way too many years of work, as the application was taking shapes I decided to open it and build an hosting offer to help financing its development. <strong>I personnaly use it on daily basis</strong> so you can be sure <strong>I will take good care of it</strong>.</p>
-        <h3>Can I connect and automatically sync my bank account ?</h3>
-        <p><strong>No</strong>, this is the main request from users, but our philisophy is to keep the app fully manual.</p>
-        <h3>Are my data encrypted ?</h3>
-        <p>Confidential data are encrypted <strong>on your device</strong> when sended to our server using JSON Web Encryption (JWE), and in <strong>all communication</strong> using HTTPS. <strong>We do not have access to your data</strong>. However, they need to be stored <strong>unencrypted on your device</strong> to run in-app. Meaning if someone access your device, this person can access your data.</p>
-        <h3>Can I help and constribute ?</h3>
-        <p><strong>We love community feedback</strong> and are glad to review contributions of any size - from typos in the documentation to critical bug fixes - so don’t be shy!</p>
+
+        { FAQ.map((item) => {
+          return <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography dangerouslySetInnerHTML={ {__html: item.q} }></Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography dangerouslySetInnerHTML={ {__html: item.a} }></Typography>
+            </AccordionDetails>
+          </Accordion>
+        })}
+
       </Container>
     </Layout>
   )

@@ -49,7 +49,7 @@ export default function Layout({ children, home }) {
       </main>
       <footer id="footer" className={styles.footer}>
         <Container>
-          <Stack direction="row" justifyContent="space-between">
+          <Stack container direction="row" justifyContent="space-between">
             <nav>
               <List>
                 <ListItem>

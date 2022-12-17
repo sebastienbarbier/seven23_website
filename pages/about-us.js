@@ -13,14 +13,26 @@ import utilStyles from '../styles/utils.module.css'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 
+import Avatar from '@mui/material/Avatar'
+
 export default function AboutUs() {
   return (
     <Layout>
       <Container>
         <h2>About us</h2>
-        <p>Team</p>
+        <p>Seven23 started as a one person project, and will try to stay as small as possible.</p>
 
-        <p>Include an army of robots</p>
+        <Stack>
+          <Avatar
+            alt="Sébastien Barbier"
+            src="/images/avatar/sebastienbarbier_profile_256.jpg"
+            sx={{ width: 128, height: 128 }}
+          />
+        </Stack>
+
+        And thanks to all our contributor
+
+        <p>In order to maintain such project with such a small team, an army of robots work every day to ensure the smooth work of this project.</p>
 
         <section>
           <h2>Contact</h2>

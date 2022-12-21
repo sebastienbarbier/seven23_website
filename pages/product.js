@@ -47,8 +47,8 @@ export default function Product() {
           </Grid>
           
           <Grid item md={12} lg={12}>
-                <p><strong>Also include</strong>: 👥 multi-account, 💱 Convertor, 🌗 dark mode, 📥 import/export, 💚 opensource, 👩‍💻 API access, 🏠 Self-hostable.</p>
-                <p><strong>And more to come (or not)</strong>: 🔑 Two-factor authentication, 🗄 tags, 🖇 attached files, 👬👬 shared budget, 📊 public profile, 🌏 locations, 🐑 social networks, and 🇫🇷 multi-langage.</p>
+            <p><strong>Also include</strong>: 👥 multi-account, 💱 Convertor, 🌗 dark mode, 📥 import/export, 💚 opensource, 👩‍💻 API access, 🏠 Self-hostable.</p>
+            {/*<p><strong>And more to come (or not)</strong>: 🔑 Two-factor authentication, 🗄 tags, 🖇 attached files, 👬👬 shared budget, 📊 public profile, 🌏 locations, 🐑 social networks, and 🇫🇷 multi-langage.</p>*/}
           </Grid>
         </Grid>
       </Container>

@@ -57,10 +57,10 @@ export default function Pricing({ terms }) {
   return (
     <Layout>
       <Container>
-        <Grid container spacing={4} justifyContent="center"  sx={{ pt: 6, pb: 6}}>
-          <Grid item md={12} lg={4}>
+        <Grid container spacing={4} alignItems="center" justifyContent="space-around" sx={{ pt: 3, pb: 6}}>
+          <Grid item md={5} lg={4}>
             <h2>Pricing</h2>
-            <Paper variant="outlined" elevation={3} style={{ padding: '6px 20px', margin: '30px 0 0'}}>
+            <Paper variant="outlined" style={{ padding: '6px 20px', margin: '30px 0 0'}}>
               <Stack spacing={2} direciton="column" justifyContent="center">
 
                 <p style={{ fontSize: 42, lineHeight: 0.7, marginBottom: 10, textAlign: 'center' }}>
@@ -100,31 +100,41 @@ export default function Pricing({ terms }) {
                 </Stack>
               </Stack>  
             </Paper>
-            <p style={{ textAlign: 'center', fontSize: 14, opacity: 0.8, fontStyle: 'italic', marginTop: theme.spacing(2) }}>Subscription in handle directly in app</p>
+            <p style={{ textAlign: 'center', fontSize: 14, opacity: 0.8, fontStyle: 'italic', marginTop: theme.spacing(2) }}>Subscription is handle directly in app</p>
+          </Grid>
+          <Grid item md={7} lg={8}>
+            <div style={{ paddingLeft: theme.spacing(4)}}>
+              <h3>We want to contribute back</h3>
+              <p>For each new subscription, <strong>10% will be donated</strong> to projects we love.</p>
+              <p>All organisations will be selected later this year, but only focused around <strong>ecology</strong> and <strong>tech community</strong>. We hope to support many projects, and will be sharing more about our actions at the end of 2023 in a public report.</p>
+            </div>
+          </Grid>
+
+          <Grid item md={12} sx={{ mt: 6 }}>
+            <h3>Also works perfectly as self-hosted</h3>
+            <p>We made it simple for you to install and run your own instance at no cost. You will have access to all features without any limitation. Have a look at our documentation about how to do so.</p>
           </Grid>
         </Grid>
 
-
-        <h3>We contribute back</h3>
-        <p>10% goes directly to projects we love</p>
-
-
-        <h2>FAQ</h2>
-
-        { FAQ.map((item) => {
-          return <Accordion>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography dangerouslySetInnerHTML={ {__html: item.q} }></Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography dangerouslySetInnerHTML={ {__html: item.a} }></Typography>
-            </AccordionDetails>
-          </Accordion>
-        })}
+        <Grid container spacing={4} justifyContent="space-around" sx={{ pt: 6, pb: 6}}>
+          <Grid item md={12}>
+            <h2 style={{ textAlign: 'center', marginBottom: 40 }}>Frequently Asked Questions</h2>
+            { FAQ.map((item) => {
+              return <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
+                  <Typography dangerouslySetInnerHTML={ {__html: item.q} }></Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography dangerouslySetInnerHTML={ {__html: item.a} }></Typography>
+                </AccordionDetails>
+              </Accordion>
+            })}
+          </Grid>
+        </Grid>
 
       </Container>
     </Layout>

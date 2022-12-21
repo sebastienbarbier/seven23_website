@@ -12,6 +12,7 @@ import utilStyles from '../styles/utils.module.css'
 
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
+import Paper from '@mui/material/Paper'
 
 import Avatar from '@mui/material/Avatar'
 
@@ -20,25 +21,34 @@ export default function AboutUs() {
     <Layout>
       <Container>
         <h2>About us</h2>
-        <p>Seven23 started as a one person project, and will try to stay as small as possible.</p>
+        <p>Seven23 started and is still mostly a one person project. By its values it has been made open source and free to use / share under a permissive licence. Our goal for the future is to keep it simple and run without any issues.</p>
 
-        <Stack>
-          <Avatar
-            alt="Sébastien Barbier"
-            src="/images/avatar/sebastienbarbier_profile_256.jpg"
-            sx={{ width: 128, height: 128 }}
-          />
-        </Stack>
+        <h3>Team</h3>
+        <Grid container spacing={4}>
+          <Grid item md="6">
+            <Stack>
+              <Paper variant="outlined" style={{ padding: '18px 26px'}}>
+                <Stack direction="row" spacing={4} alignItems="center">
+                  <Avatar
+                    alt="Sébastien Barbier"
+                    src="/images/avatar/sebastienbarbier_profile_256.jpg"
+                    sx={{ width: 80, height: 80 }}
+                  />
+                  <p style={{ fontSize: 18, fontWeight: 500 }}>Sébastien Barbier<br/><small>Founder</small></p>
+                </Stack>
+              </Paper>
+            </Stack>  
+          </Grid>
+        </Grid>
 
-        And thanks to all our contributor
+        <h3>Contributors</h3>
 
-        <p>In order to maintain such project with such a small team, an army of robots work every day to ensure the smooth work of this project.</p>
+        <p>Thanks to the contributors who helped improving this project.</p>
 
         <section>
           <h2>Contact</h2>
-          <p>If any questions or any needs, you can reach to me by <a href="mailto:contact@seven23.io">email</a> or over <a target="_blank" href="https://twitter.com/Seven23_app">twitter</a>.</p>
+          <p>If you have any questions or need assistance, please don't hesitate to reach out to us. You can contact us by <a href="mailto:contact@seven23.io">email</a> or <a target="_blank" href="https://twitter.com/Seven23_app">twitter</a>, and we will do our best to get back to you as soon as possible.</p>
         </section>
-
       </Container>
     </Layout>
   )

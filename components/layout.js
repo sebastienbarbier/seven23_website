@@ -21,6 +21,9 @@ const name = 'Seven23'
 export const siteTitle = 'Seven23 - Blog'
 
 export default function Layout({ children, home }) {
+
+  const year = new Date().getFullYear();
+
   return (
     <div>
       <Head>
@@ -94,7 +97,7 @@ export default function Layout({ children, home }) {
               </p>
             </Stack>
           </Stack>
-          <p style={{ textAlign: 'center', fontSize: '0.9em', paddingTop: 4, paddingBottom: 4 }}>2022 - Seven23 - <a href="/legals/">Terms of Service and Privacy Policy</a></p>
+          <p style={{ textAlign: 'center', fontSize: '0.9em', paddingTop: 4, paddingBottom: 4 }}>{year} - Seven23 - <a href="/legals/">Terms of Service and Privacy Policy</a></p>
         </Container>
       </footer>
     </div>

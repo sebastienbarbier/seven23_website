@@ -20,8 +20,14 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 
 import Typography from '@mui/material/Typography';
-
+import Divider from '@mui/material/Divider';
+import Paper from '@mui/material/Paper';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
+
+import theme from '../components/theme';
+
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
 export async function getStaticProps() {
   const terms = await getTermsData()
@@ -51,28 +57,57 @@ export default function Pricing({ terms }) {
   return (
     <Layout>
       <Container>
-        <h2>Pricing</h2>
-        <Grid container spacing={2}>
-          <Grid item md={12} lg={6} className="price">
-            <h3>Self hosted</h3>
-            <p>Install on your own server at <strong>no extra cost</strong> and use the <strong>official app</strong> to access it. We even provide a <strong>one-click install</strong> for a few cloud plateform to make the process easier.</p>
-            <div>
-                <p>0<span>€</span><small>/ forever</small></p>
-                <Button href="https://seven23-server.readthedocs.io/en/latest/index.html">See documentation</Button>
-            </div>
-          </Grid>
-          <Grid item md={12} lg={6} className="price">
-            <h3>As a Service</h3>
-            <p>If you do not want to be in change of your own instance, we provide an <strong>official version</strong> as this website. We will perform <strong>maintenance</strong> and <strong>backups</strong> for you in exchange of a <strong>yearly subscription</strong>.</p>
-            <p className="trial_period">After a {terms.trial_period}-day trial period</p>
-            <div>
-                <p>{terms ? terms.products[0].price : '--'}<span>€</span><small>/ year</small></p>
-            </div>
+        <Grid container spacing={4} justifyContent="center"  sx={{ pt: 6, pb: 6}}>
+          <Grid item md={12} lg={4}>
+            <h2>Pricing</h2>
+            <Paper variant="outlined" elevation={3} style={{ padding: '6px 20px', margin: '30px 0 0'}}>
+              <Stack spacing={2} direciton="column" justifyContent="center">
+
+                <p style={{ fontSize: 42, lineHeight: 0.7, marginBottom: 10, textAlign: 'center' }}>
+                  {terms ? terms.products[0].price : '--'}<span>€</span>
+                  <br/>
+                  <small style={{ fontSize: 12, textTransform: 'uppercase', fontWeight: 600, opacity: 0.8}}>per year</small>
+                </p>
+
+                <Stack direction="column" spacing={0} divider={<Divider/>}>
+                  <p style={{ display: 'inline', verticalAlign: 'bottom', alignItems: 'bottom' }}>
+                     <CheckCircleOutlineIcon style={{ marginRight: 8, top: 5, position: 'relative' }} color="success" />
+                     { terms.trial_period } days trial period, <span style={{ fontSize: '0.8em' }}>no credit card needed</span>
+                  </p>
+                  <p style={{ display: 'inline', verticalAlign: 'bottom'}}>
+                    <CheckCircleOutlineIcon style={{ marginRight: 8, top: 5, position: 'relative' }} color="success" />
+                    Multi device syncing
+                  </p>
+                  <p style={{ display: 'inline', verticalAlign: 'bottom'}}>
+                    <CheckCircleOutlineIcon style={{ marginRight: 8, top: 5, position: 'relative' }} color="success" />
+                    Encrypted data backup
+                  </p>
+                  <Stack style={{ paddingTop: theme.spacing(1), paddingBottom: theme.spacing(2) }}>
+                    <p style={{ textAlign: 'center', fontWeight: 400 }}>All data are hosted in France</p>
+                    <Stack 
+                      spacing={3} 
+                      direction="row" 
+                      alignItems="center" 
+                      justifyContent="center">
+                      <p style={{ display: 'flex', alignItems: 'center'  }}>
+                        <a href="https://clever-cloud.com"><img style={{ width: 120, marginRight: 7 }} src="/images/svg/clevercloud_mono_logo.svg"/></a>
+                      </p>
+                      <p style={{ display: 'flex', alignItems: 'center'  }}>
+                        <a href="https://ovh.com"><img style={{ width: 120, marginRight: 7 }} src="/images/svg/ovh_mono_logo.svg"/></a>
+                      </p>
+                    </Stack>
+                  </Stack>
+                </Stack>
+              </Stack>  
+            </Paper>
+            <p style={{ textAlign: 'center', fontSize: 14, opacity: 0.8, fontStyle: 'italic', marginTop: theme.spacing(2) }}>Subscription in handle directly in app</p>
           </Grid>
         </Grid>
 
-        <h2>We contribute back</h2>
+
+        <h3>We contribute back</h3>
         <p>10% goes directly to projects we love</p>
+
 
         <h2>FAQ</h2>
 

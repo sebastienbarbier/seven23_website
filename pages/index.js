@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <Layout home>
       <Container>
-        <section style={{ height: '70vh', display: 'flex', alignItems: 'center' }}>
+        <section style={{ height: '70vh', maxHeight: 660, display: 'flex', alignItems: 'center' }}>
           <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={4}>
             <div id="title_text">
               <Stack direction="column" alignItems="flex-start" justifyContent="flex-start" spacing={2}>

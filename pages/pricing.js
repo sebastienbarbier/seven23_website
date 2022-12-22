@@ -24,7 +24,6 @@ import Divider from '@mui/material/Divider';
 import Paper from '@mui/material/Paper';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-
 import theme from '../components/theme';
 
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
@@ -102,8 +101,8 @@ export default function Pricing({ terms }) {
             </Paper>
             <p style={{ textAlign: 'center', fontSize: 14, opacity: 0.8, fontStyle: 'italic', marginTop: theme.spacing(2) }}>Subscription is handle directly in app</p>
           </Grid>
-          <Grid item md={7} lg={8}>
-            <div style={{ paddingLeft: theme.spacing(4)}}>
+          <Grid item md={5} lg={6}>
+            <div style={{ paddingLeft: theme.spacing(1)}}>
               <h3>We want to contribute back</h3>
               <p>For each new subscription, <strong>10% will be donated</strong> to projects we love.</p>
               <p>All organisations will be selected later this year, but only focused around <strong>ecology</strong> and <strong>tech community</strong>. We hope to support many projects, and will be sharing more about our actions at the end of 2023 in a public report.</p>
@@ -117,10 +116,10 @@ export default function Pricing({ terms }) {
         </Grid>
 
         <Grid container spacing={4} justifyContent="space-around" sx={{ pt: 6, pb: 6}}>
-          <Grid item md={12}>
+          <Grid item md={11}>
             <h2 style={{ textAlign: 'center', marginBottom: 40 }}>Frequently Asked Questions</h2>
             { FAQ.map((item) => {
-              return <Accordion>
+              return <Accordion style={{ boxShadow: 'None' }}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel1a-content"

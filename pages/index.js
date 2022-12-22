@@ -23,8 +23,6 @@ import Avatar from '@mui/material/Avatar';
 
 import theme from '../components/theme';
 
-const PHOTOS = []
-
 export default function Home() {
   return (
     <Layout home>
@@ -35,7 +33,7 @@ export default function Home() {
               <Stack direction="column" alignItems="flex-start" justifyContent="flex-start" spacing={2}>
                 <Typography variant="h5" gutterBottom>Fully manual budget app to track personal expenses.<br />Completely <strong>opensource</strong>, with <strong>privacy by design</strong>.</Typography>
                 <Button href="https://app.seven23.io" variant="contained" disableElevation>Launch app</Button>
-                <Typography variant="subtitle2" gutterBottom>Free Trial — No Credit Card Required</Typography> 
+                <Typography variant="subtitle2" gutterBottom>Try it now — No account needed</Typography> 
               </Stack>
             </div>
             <aside style={{maxWidth: '40%'}}>

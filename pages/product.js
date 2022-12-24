@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
+import { useEffect } from 'react'
+
 import * as React from 'react';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
@@ -17,9 +19,20 @@ import Typography from '@mui/material/Typography'
 import Paper from '@mui/material/Paper'
 import Divider from '@mui/material/Divider'
 
+import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
+
 import theme from '../components/theme';
 
 const styles = {
+  headline: {
+    textAlign: 'center',
+    fontSize: 75,
+    fontWeight: 600,
+    lineHeight: 1,
+    letterSpacing: -1,
+    paddingTop: 30,
+    marginBottom: 20
+  },
   small: {
     padding: '10px 20px 10px',
     display: 'flex',
@@ -37,19 +50,77 @@ const styles = {
   title: {
     paddingTop: 14,
     borderTop: `${theme.palette.divider} solid 1px`
+  },
+  wrapper: {
+    position: 'relative', 
+    paddingTop: 60, 
+    marginBottom: 60,
+    maxWidth: '1000px',
+    margin: 'auto'
+  },
+  screen: {
+    width: '70%',
+    marginLeft: '15%',
+    height: '100%',
+  },
+  tablet: {
+    position: 'absolute',
+    bottom: 20,
+    right: '6%',//70,
+    width: '33%'// 380
+  },
+  mobile: {
+    position: 'absolute',
+    bottom: 18,
+    left: '13%', //145,
+    width: '9%',//100,
   }
 };
 
+/*
+One budget to rule them all, one budget to find them, one budget to bring them all, and in the app bind them.
+- The Grey Accountants
+*/
 
-{/*<p><strong>And more to come (or not)</strong>: 🔑 Two-factor authentication, 🗄 tags, 🖇 attached files, 👬👬 shared budget, 📊 public profile, 🌏 locations, 🐑 social networks, and 🇫🇷 multi-langage.</p>*/}
+/*<p><strong>And more to come (or not)</strong>: 🔑 Two-factor authentication, 🗄 tags, 🖇 attached files, 👬👬 shared budget, 📊 public profile, 🌏 locations, 🐑 social networks, and 🇫🇷 multi-langage.</p>*/
 export default function Product() {
+
+  useEffect(() => {
+    console.log('Start Observers');
+    let options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0
+    };
+    let observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        entry.target.classList = 'show';
+      })
+
+    }, options);
+
+    observer.observe(document.getElementById('devices'));
+
+  }, []);
 
   return (
     <Layout>
       <Container>
-
+        <h1 style={styles.headline}>Made for me, but<br/>could work for you too.</h1>
+        <div style={styles.wrapper} id="devices" className={'hidden'}>
+          <img src="/images/screenshots/1-xdr-dashboard.png" style={styles.screen} className="screen"/>
+          <img src="/images/screenshots/5-ipad-report.png" style={styles.tablet} className="tablet"/>
+          <img src="/images/screenshots/2-iphone-transactions.png" style={styles.mobile} className="mobile"/>
+        </div>
+        <style global jsx>{`
+          #devices.hidden .screen { opacity: 0; }
+          #devices.hidden .tablet { opacity: 0; margin-right: 20px; }
+          #devices.hidden .mobile { opacity: 0; margin-left: 10px; }
+          #devices.show .screen { opacity: 1; transition: all 0.8s ease-in-out; }
+          #devices.show .tablet { opacity: 1; margin-right: 0; transition: all 0.8s ease-in-out 0.2s; }
+          #devices.show .mobile { opacity: 1; margin-left: 0; transition: all 0.5s ease-in-out 0.4s; }
+        `}</style>
         <Stack spacing={10} style={{ marginTop: theme.spacing(6), marginBottom: theme.spacing(12) }}>
-
           <Grid container justifyContent="space-around" spacing={1}>
             <Grid item xs={4} style={styles.title}>
               <Typography variant="h5">Write down each transaction to have an overview of your month.</Typography>
@@ -70,20 +141,39 @@ export default function Product() {
         </Stack>
         <Stack spacing={12} style={{ marginTop: theme.spacing(6), marginBottom: theme.spacing(12) }}>
 
-          <Grid container spacing={2} justifyContent="center">
+          <Grid container spacing={8} justifyContent="center">
             <Grid item md={12} lg={12}>
-              <h2>What gets measured, gets managed</h2>
+              <h2 style={{ textAlign: 'center' }}><FormatQuoteIcon style={{ marginRight: 18 }} fontSize="large"/>What gets measured, gets managed</h2>
             </Grid>
-            <Grid item md={3}>
+            <Grid item md={4}>
               <h3>Dashboard</h3>
               <p>The application open on the dashboard which provide a quick view of the current situation.</p>
             </Grid>
-            <Grid item md={3}>
+            <Grid item md={4}>
+              <h3>Transactions</h3>
+              <p>Use the report view to analyse your spending for a specific date range.</p>
+            </Grid>
+            <Grid item md={4}>
+              <h3>Categories</h3>
+              <p>Use the report view to analyse your spending for a specific date range.</p>
+            </Grid>
+            <Grid item md={4}>
+              <h3>Changes</h3>
+              <p>Use the report view to analyse your spending for a specific date range.</p>
+            </Grid>
+            <Grid item md={4}>
               <h3>Report</h3>
               <p>Use the report view to analyse your spending for a specific date range.</p>
             </Grid>
-            <Grid item md={3}>
-              <h3>Exchange rate</h3>
+          </Grid>
+          {/* CAROUSEL, showing different page of the app */}
+          <Grid container spacing={8} justifyContent="center" alignItems="center">
+            
+            <Grid item md={5}>
+              <img src="/images/screenshots/5-ipad-report.png" className="tablet"/>
+            </Grid>
+            <Grid item md={6}>
+              <h3>Dynamic Exchange rate</h3>
               <p>When exchanging currency at an ATM or an exchanger shop, the applied rate never really match our expectation and often include hidden fees. To provide an accurate exchange rate, manually provide each exchange to let the application know how the actual rate.</p>
             </Grid>
           </Grid>
@@ -94,10 +184,11 @@ export default function Product() {
               <h3>Privacy by design</h3>
             </Grid>
             <Grid item md={7} lg={7}>
-              <p>We provides secure end-to-end encryption and an open source code base to protect the confidentiality of your data. This ensures that only you can access the communication and data within the application.</p>
+              <p>We provides secure end-to-end encryption within an open source code base to protect the confidentiality of your data. This ensures that only you can access and read them.</p>
             </Grid>
 
           </Grid>
+
           <Grid container spacing={2}>
 
             <Grid item md={12} lg={12}>
@@ -161,7 +252,7 @@ export default function Product() {
 
             <Grid item md={3} lg={3}>
               <Paper variant="outlined" style={styles.small}>
-              🎒 Integrated with Nomadlist
+              🏝️ Offline capacity
               </Paper>
             </Grid>
           </Grid>

@@ -20,6 +20,14 @@ import BugReportIcon from '@mui/icons-material/BugReport';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import HttpIcon from '@mui/icons-material/Http';
 
+const styles = {
+  icon: {
+    width: 40,
+    borderRadius: 4,
+    marginRight: 10,
+    boxShadow: 'rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;'
+  }
+};
 export default function Resources({ terms }) {
   return (
     <Layout>
@@ -32,19 +40,35 @@ export default function Resources({ terms }) {
           <Grid item xs>
             <h3>Web application</h3>
             <p>The web application is the main way to interact with our backend.</p>
-            <Button href="https://app.seven23.io">Launch app</Button>
-            <Button href="https://next.seven23.io">Next release (unstable)</Button>
-            <Button href="https://seven23.readthedocs.io/en/latest/">Documentation</Button><br/>
-            <Button href="https://github.com/sebastienbarbier/seven23" startIcon={<GitHubIcon />}>Code repository</Button>
-            <Button href="https://github.com/sebastienbarbier/seven23/issues" startIcon={<BugReportIcon />}>Bug tracker</Button>
+            <Stack spacing={2}>
+              <Stack spacing={2} direction="row" justifyContent="flex-start">
+                <Button href="https://app.seven23.io">
+                  <img src="/images/icons/android-chrome-512x512.png" style={styles.icon} />Latest release (stable)
+                </Button>
+                <Button href="https://next.seven23.io">
+                  <img src="/images/icons/android-chrome-512x512.png" style={styles.icon} />Next release (unstable)
+                </Button>
+              </Stack>
+              <Stack direction="row" spacing={2}>
+                <Button href="https://seven23.readthedocs.io/en/latest/">Documentation</Button>
+                <Button href="https://github.com/sebastienbarbier/seven23" startIcon={<GitHubIcon />}>Code repository</Button>
+                <Button href="https://github.com/sebastienbarbier/seven23/issues" startIcon={<BugReportIcon />}>Bug tracker</Button>
+              </Stack>
+            </Stack>
             <h3>Backend</h3>
             <p>To store and sync data, the application needs to connect to the backend.</p>
-            <Button href="https://api.seven23.io">api.seven23.io</Button>
-            <Button href="https://seven23-server.readthedocs.io/en/latest/">Documentation</Button>
-            <Button href="https://api.seven23.io/redoc/">Redoc</Button>
-            <Button href="https://api.seven23.io/swagger/">Swagger</Button><br/>
-            <Button href="https://github.com/sebastienbarbier/seven23_server" startIcon={<GitHubIcon />}>Code repository</Button>
-            <Button href="https://github.com/sebastienbarbier/seven23_server/issues" startIcon={<BugReportIcon />}>Bug tracker</Button>
+            <Stack spacing={2}>
+              <Stack direction="row" spacing={2}>
+                <Button href="https://api.seven23.io">api.seven23.io</Button>
+                <Button href="https://seven23-server.readthedocs.io/en/latest/">Documentation</Button>
+                <Button href="https://api.seven23.io/redoc/">Redoc</Button>
+                <Button href="https://api.seven23.io/swagger/">Swagger</Button>
+              </Stack>
+              <Stack direction="row" spacing={2}>
+                <Button href="https://github.com/sebastienbarbier/seven23_server" startIcon={<GitHubIcon />}>Code repository</Button>
+                <Button href="https://github.com/sebastienbarbier/seven23_server/issues" startIcon={<BugReportIcon />}>Bug tracker</Button>
+              </Stack>
+            </Stack>
           </Grid>
           <Divider orientation="vertical" flexItem />
           <Grid item xs={4}>

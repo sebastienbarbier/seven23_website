@@ -175,18 +175,13 @@ export default function Layout({ children, home }) {
               <nav>
                 <List>
                   <ListItem disablePadding>
-                    <ListItemButton dense={true} component="a" href="https://github.com/sebastienbarbier/seven23_webapp">
-                      <ListItemText primary="Source code"/>
-                    </ListItemButton>
-                  </ListItem>
-                  <ListItem disablePadding>
-                    <ListItemButton dense={true} component="a" href="https://github.com/sebastienbarbier/seven23_webapp/issues">
-                      <ListItemText primary="Issue tracker"/>
+                    <ListItemButton dense={true} component="a" href="/terms/">
+                      <ListItemText primary="Terms of Service"/>
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemButton dense={true} component="a" href="/legals/">
-                      <ListItemText primary="Terms of Service"/>
+                      <ListItemText primary="Legals & Copyright"/>
                     </ListItemButton>
                   </ListItem>
                 </List>

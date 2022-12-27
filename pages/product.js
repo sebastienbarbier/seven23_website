@@ -28,7 +28,7 @@ const styles = {
     textAlign: 'center',
     fontSize: 75,
     fontWeight: 600,
-    lineHeight: 1,
+    lineHeight: 1.2,
     letterSpacing: -1,
     paddingTop: 30,
     marginBottom: 20
@@ -106,7 +106,7 @@ export default function Product() {
   return (
     <Layout>
       <Container>
-        <h1 style={styles.headline}>Made for me, but<br/>could work for you too.</h1>
+        <h1 style={styles.headline}>What gets measured,<br/>gets managed.</h1>
         <div style={styles.wrapper} id="devices" className={'hidden'}>
           <img src="/images/screenshots/1-xdr-dashboard.png" style={styles.screen} className="screen"/>
           <img src="/images/screenshots/5-ipad-report.png" style={styles.tablet} className="tablet"/>
@@ -143,7 +143,7 @@ export default function Product() {
 
           <Grid container spacing={8} justifyContent="center">
             <Grid item md={12} lg={12}>
-              <h2 style={{ textAlign: 'center' }}><FormatQuoteIcon style={{ marginRight: 18 }} fontSize="large"/>What gets measured, gets managed</h2>
+              <h2 style={{ textAlign: 'center' }}><FormatQuoteIcon style={{ marginRight: 8 }} fontSize="large"/>Keep it simple and stupid</h2>
             </Grid>
             <Grid item md={4}>
               <h3>Dashboard</h3>
@@ -151,11 +151,11 @@ export default function Product() {
             </Grid>
             <Grid item md={4}>
               <h3>Transactions</h3>
-              <p>A full list of transaction often makes you realise you forget little things. No more.</p>
+              <p>A full list of transactions often allows you realise we underestimate small things.</p>
             </Grid>
             <Grid item md={4}>
               <h3>Categories</h3>
-              <p>You might be spending more on beer than you think, find out quickly.</p>
+              <p>You might be spending more on beers than you think, find out quickly.</p>
             </Grid>
             <Grid item md={4}>
               <h3>Changes</h3>
@@ -170,11 +170,12 @@ export default function Product() {
           <Grid container spacing={8} justifyContent="center" alignItems="center">
             
             <Grid item md={5}>
-              <img src="/images/screenshots/2-changes-browser.png" className=""/>
+              <img src="/images/screenshots/browser-changes.png" className=""/>
             </Grid>
             <Grid item md={6}>
               <h3>Why tracking manually exchange rate ?</h3>
-              <p>When exchanging currency at an ATM or an exchanger booth, the applied rate never really match our expectation and often include hidden fees. To provide an accurate exchange rate, manually provide each exchange to let the application know how the actual rate.</p>
+              <p>When exchanging currency at an ATM or an exchanger booth, the applied rate never really match our expectation and often include hidden fees. To provide an accurate exchange rate, manually write down each exchanges to let the application know the actual rate.</p>
+              <p>All transactions can then be displayed in a currency of your choice, which can be especially helpful for those who travel frequently or need to track expenses in multiple currencies.</p>
             </Grid>
           </Grid>
 

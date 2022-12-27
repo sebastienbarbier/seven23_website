@@ -12,7 +12,8 @@ import utilStyles from '../styles/utils.module.css'
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import Typography from '@mui/material/Typography';Paper
+import Paper from '@mui/material/Paper';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 
 import EnhancedEncryptionIcon from '@mui/icons-material/EnhancedEncryption';
@@ -23,12 +24,45 @@ import Avatar from '@mui/material/Avatar';
 
 import theme from '../components/theme';
 
+const styles = {
+  wrapper: {
+    position: 'relative', 
+    maxWidth: '40%',
+  },
+  tablet: {
+    width: '100%'
+  },
+  mobile: {
+    position: 'absolute',
+    bottom: 18,
+    right: 0,
+    width: '26%',//100,
+  },
+  small: {
+    padding: '10px 20px 10px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 140,
+    textAlign: 'center'
+  },
+  large: {
+    padding: '10px 20px 10px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 298,
+    textAlign: 'center'
+  },
+};
+
+
 export default function Home() {
   return (
     <Layout home>
       <Container>
         <section style={{ height: '70vh', maxHeight: 660, display: 'flex', alignItems: 'center' }}>
-          <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={4}>
+          <Stack direction="row-reverse" alignItems="center" justifyContent="space-between" spacing={4}>
             <div id="title_text">
               <Stack direction="column" alignItems="flex-start" justifyContent="flex-start" spacing={2}>
                 <Typography variant="h5" gutterBottom>Fully manual budget app to track personal expenses.<br />Completely <strong>opensource</strong>, with <strong>privacy by design</strong>.</Typography>
@@ -36,33 +70,28 @@ export default function Home() {
                 <Typography variant="subtitle2" gutterBottom>Try it now — No account needed</Typography> 
               </Stack>
             </div>
-            <aside style={{maxWidth: '40%'}}>
+            <aside style={styles.wrapper}>
                 <img
-                    src="/images/transactions-light.png"
-                    alt="iPhone visual of Seven23" />
+                    src="/images/screenshots/browser-transactions.png"
+                    alt="Browser visual of Seven23"
+                    style={styles.tablet} />
+                <img
+                    src="/images/screenshots/2-iphone-transactions.png"
+                    alt="iPhone visual of Seven23"
+                    style={styles.mobile} />
             </aside>
           </Stack>
         </section>
         {/* Responsive web application with offline capacity */}
 
-        <Grid spacing={8}>
+
+        <Grid container spacing={2} mt={theme.spacing(4)}>
+
           <Grid item xs={12}>
-            <h2>We keep it simple and stupid</h2>
+            <p><strong>Seven23</strong> is a one person project design to answer the very simple question: <em>'How much did I spend in beers this month'</em>. Main idea is not to track your portfolio, how much you saved, or have left, but simply to understand where your money goes and identify potential cognitive biases.</p>
           </Grid>
-        </Grid>
-        <Grid container spacing={8}>
-          <Grid item xs={12}>
-            This application is a simple and straightforward tool for tracking personal expenses. It allows you to keep a record of all your transactions, organized by category. One of the unique features of our app is the ability to manually enter exchange rates and view all your transactions in a currency of your choice. This can be especially helpful for those who travel frequently or need to track expenses in multiple currencies. 
-          </Grid>
-          <Grid item xs={6}>
-            <EnhancedEncryptionIcon sx={{ fontSize: 60 }} />
-            <p>We provides secure end-to-end encryption and an open source code base to protect the confidentiality of your data. This ensures that only you can access the communication and data within the application.</p>
-          </Grid>
-          <Grid item xs={6}>
-            <DevicesIcon sx={{ fontSize: 60 }} />
-            <p>Seven23 is a responsive web app with offline capacity. It can be accessed on any device with a web browser, including phones, tablets, and desktop computers. No matter where you are, or if you don't have an internet connection.</p>
-          </Grid>
-          <Grid item xs={12} container direction="column" justifyContent="center" alignItems="center">
+
+          <Grid item xs={12} container direction="column" justifyContent="center" alignItems="center"  mt={theme.spacing(1)}>
             <Button href="/product" style={{float: 'right' }} variant="outlined" disableElevation>See all features</Button>
           </Grid>
         </Grid>

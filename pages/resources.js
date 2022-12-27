@@ -74,7 +74,7 @@ export default function Resources({ terms }) {
           <Grid item xs={12} lg={4}>
             <h3>Around the project</h3>
             <h4>News feed</h4>
-            <p>The latest news can be found on our blog or on our Twitter feed.</p>
+            <p>Latest news are share on the blog or on the  Twitter feed.</p>
             <Stack direction={{xs: 'column', lg: "row"}} alignItems="flex-start" spacing={0.5}>
               <Button href="https://blog.seven23.io">Blog</Button>
               <Button href="https://twitter.com/seven23_app" startIcon={<TwitterIcon />}>Twitter</Button>

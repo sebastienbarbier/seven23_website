@@ -159,15 +159,15 @@ export default function Product() {
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
               <h3>Categories</h3>
-              <p>You might be spending more on beers than you think, find out quickly.</p>
+              <p>You might be spending more on beer than you think, find out quickly.</p>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
               <h3>Changes</h3>
-              <p>Have a realistic exchange rate by keeping track of your exhanges.</p>
+              <p>Have a realistic exchange rate by keeping track of your exchanges.</p>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
               <h3>Report</h3>
-              <p>Pick a range of date, and see how things went.</p>
+              <p>Pick a date range, and see how things went.</p>
             </Grid>
           </Grid>
 
@@ -178,7 +178,7 @@ export default function Product() {
               <img src="/images/screenshots/browser-changes.png" style={{ maxWidth: '50vw', width: '100%' }}/>
             </Grid>
             <Grid item xs={12} md={6}>
-              <h3>Why tracking manually exchange rate ?</h3>
+              <h3>Why manually tracking exchange rate ?</h3>
               <p>When exchanging currency at an ATM or an exchanger booth, the applied rate never really match our expectation and often include hidden fees. To provide an accurate exchange rate, manually write down each exchanges to let the application know the actual rate.</p>
               <p>All transactions can then be displayed in a currency of your choice, which can be especially helpful for those who travel frequently or need to track expenses in multiple currencies.</p>
             </Grid>

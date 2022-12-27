@@ -95,7 +95,7 @@ export default function Home() {
 
         <Grid container spacing={2} mt={theme.spacing(4)}>
           <Grid item xs={12}>
-            <p><strong>Seven23</strong> is a one person project design to answer the very simple question: <em>'How much did I spend in beers this month'</em>. Main idea is not to track your portfolio, how much you saved, or have left, but simply to understand where your money goes and identify potential cognitive biases.</p>
+            <p><strong>Seven23</strong> is a one person project design to answer the very simple question: <em>'How much did I spend on beer this month'</em>. Main idea is not to track your portfolio, how much you saved, or have left, but simply to understand where your money goes and identify potential cognitive biases.</p>
           </Grid>
 
           <Grid item xs={12} container direction="column" justifyContent="center" alignItems="center"  mt={theme.spacing(1)}>

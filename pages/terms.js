@@ -22,30 +22,12 @@ export async function getStaticProps() {
   }
 }
 
-export default function Legals({ terms }) {
+export default function Terms({ terms }) {
   return (
     <Layout>
       <Container>
 
-        <h2>Legals & Copyright</h2>
-
-        <h3>Author</h3>
-
-        <p>Mr Sebastien BARBIER<br />
-        Contact : contact@sebastienbarbier.com</p>
-
-        <h3>Hosting</h3>
-
-        <p>Clever Cloud SAS<br />
-        3 rue de l'Allier<br />
-        44000 Nantes, France.<br />
-        Website : www.clever-cloud.com<br />
-        General support (commercial and other requests): +33 2 85 52 07 69<br />
-        Technical support: support@clever-cloud.com.</p>
-
-        <h3>Licence</h3>
-
-        <p>Application and website is licensed under a MIT licence.</p>
+        { terms ? <div dangerouslySetInnerHTML={{__html: terms.terms_and_conditions}}></div> : <div></div> }
       </Container>
     </Layout>
   )

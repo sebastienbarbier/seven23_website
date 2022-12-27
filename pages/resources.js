@@ -37,11 +37,11 @@ export default function Resources({ terms }) {
         <p>Everything you might be looking for as online resources from this project and which might be helpful.</p>
 
         <Grid container spacing={2} style={{ marginTop: 20 }}>
-          <Grid item xs>
+          <Grid item xs={12} lg={7}>
             <h3>Web application</h3>
             <p>The web application is the main way to interact with our backend.</p>
             <Stack spacing={2}>
-              <Stack spacing={2} direction="row" justifyContent="flex-start">
+              <Stack spacing={2} direction={{xs: 'column', lg: "row"}} alignItems="flex-start" justifyContent="flex-start">
                 <Button href="https://app.seven23.io">
                   <img src="/images/icons/android-chrome-512x512.png" style={styles.icon} />Latest release (stable)
                 </Button>
@@ -49,7 +49,7 @@ export default function Resources({ terms }) {
                   <img src="/images/icons/android-chrome-512x512.png" style={styles.icon} />Next release (unstable)
                 </Button>
               </Stack>
-              <Stack direction="row" spacing={2}>
+              <Stack direction={{xs: 'column', lg: "row"}} alignItems="flex-start" spacing={2}>
                 <Button href="https://seven23.readthedocs.io/en/latest/">Documentation</Button>
                 <Button href="https://github.com/sebastienbarbier/seven23" startIcon={<GitHubIcon />}>Code repository</Button>
                 <Button href="https://github.com/sebastienbarbier/seven23/issues" startIcon={<BugReportIcon />}>Bug tracker</Button>
@@ -58,24 +58,24 @@ export default function Resources({ terms }) {
             <h3>Backend</h3>
             <p>To store and sync data, the application needs to connect to the backend.</p>
             <Stack spacing={2}>
-              <Stack direction="row" spacing={2}>
+              <Stack direction={{xs: 'column', lg: "row"}} alignItems="flex-start" spacing={2}>
                 <Button href="https://api.seven23.io">api.seven23.io</Button>
                 <Button href="https://seven23-server.readthedocs.io/en/latest/">Documentation</Button>
                 <Button href="https://api.seven23.io/redoc/">Redoc</Button>
                 <Button href="https://api.seven23.io/swagger/">Swagger</Button>
               </Stack>
-              <Stack direction="row" spacing={2}>
+              <Stack direction={{xs: 'column', lg: "row"}} alignItems="flex-start" spacing={2}>
                 <Button href="https://github.com/sebastienbarbier/seven23_server" startIcon={<GitHubIcon />}>Code repository</Button>
                 <Button href="https://github.com/sebastienbarbier/seven23_server/issues" startIcon={<BugReportIcon />}>Bug tracker</Button>
               </Stack>
             </Stack>
           </Grid>
           <Divider orientation="vertical" flexItem />
-          <Grid item xs={4}>
+          <Grid item xs={12} lg={4}>
             <h3>Around the project</h3>
             <h4>News feed</h4>
             <p>The latest news can be found on our blog or on our Twitter feed.</p>
-            <Stack direction="row" spacing={0.5}>
+            <Stack direction={{xs: 'column', lg: "row"}} alignItems="flex-start" spacing={0.5}>
               <Button href="https://blog.seven23.io">Blog</Button>
               <Button href="https://twitter.com/seven23_app" startIcon={<TwitterIcon />}>Twitter</Button>
             </Stack>

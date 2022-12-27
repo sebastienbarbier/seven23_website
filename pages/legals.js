@@ -32,7 +32,7 @@ export default function Legals({ terms }) {
         <h3>Author</h3>
 
         <p>Mr Sebastien BARBIER<br />
-        Contact : seven23@sebastienbarbier.com</p>
+        Contact : contact@sebastienbarbier.com</p>
 
         <h3>Hosting</h3>
 

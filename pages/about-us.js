@@ -25,7 +25,7 @@ export default function AboutUs() {
 
         <h3>Team</h3>
         <Grid container spacing={4}>
-          <Grid item md="6">
+          <Grid item xs={12} md="6">
             <Stack>
               <Paper variant="outlined" style={{ padding: '18px 26px'}}>
                 <Stack direction="row" spacing={4} alignItems="center">

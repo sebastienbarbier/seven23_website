@@ -57,7 +57,7 @@ export default function Pricing({ terms }) {
     <Layout>
       <Container>
         <Grid container spacing={4} alignItems="center" justifyContent="space-around" sx={{ pt: 3, pb: 6}}>
-          <Grid item md={5} lg={4}>
+          <Grid item xs={12} md={5} lg={4}>
             <h2>Pricing</h2>
             <Paper variant="outlined" style={{ padding: '6px 20px', margin: '30px 0 0'}}>
               <Stack spacing={2} direciton="column" justifyContent="center">
@@ -101,7 +101,7 @@ export default function Pricing({ terms }) {
             </Paper>
             <p style={{ textAlign: 'center', fontSize: 14, opacity: 0.8, fontStyle: 'italic', marginTop: theme.spacing(2) }}>Subscription is handle directly in app</p>
           </Grid>
-          <Grid item md={5} lg={6}>
+          <Grid item md={7} lg={6}>
             <div style={{ paddingLeft: theme.spacing(1)}}>
               <h3>We want to contribute back</h3>
               <p>For each new subscription, <strong>10% will be donated</strong> to projects we love.</p>
@@ -115,8 +115,8 @@ export default function Pricing({ terms }) {
           </Grid>
         </Grid>
 
-        <Grid container spacing={4} justifyContent="space-around" sx={{ pt: 6, pb: 6}}>
-          <Grid item md={11}>
+        <Grid container justifyContent="space-around" sx={{ pt: 6, pb: 6}}>
+          <Grid item xs={12} md={12} lg={11}>
             <h2 style={{ textAlign: 'center', marginBottom: 40 }}>Frequently Asked Questions</h2>
             { FAQ.map((item) => {
               return <Accordion style={{ boxShadow: 'None' }}>

@@ -26,12 +26,16 @@ import theme from '../components/theme';
 const styles = {
   headline: {
     textAlign: 'center',
-    fontSize: 75,
+    fontSize: { xs: 30, sm: 45, md: 75},
     fontWeight: 600,
     lineHeight: 1.2,
     letterSpacing: -1,
-    paddingTop: 30,
-    marginBottom: 20
+    paddingTop: 6,
+    marginBottom: 2
+  },
+  subheadline: {
+    fontSize: { xs: 16, sm: 18, md: 20},
+    fontWeight: 400
   },
   small: {
     padding: '10px 20px 10px',
@@ -49,7 +53,7 @@ const styles = {
   },
   title: {
     paddingTop: 14,
-    borderTop: `${theme.palette.divider} solid 1px`
+    borderTop: `${theme.palette.divider} solid 1px`,
   },
   wrapper: {
     position: 'relative', 
@@ -106,7 +110,7 @@ export default function Product() {
   return (
     <Layout>
       <Container>
-        <h1 style={styles.headline}>What gets measured,<br/>gets managed.</h1>
+        <Typography variant="h1" sx={styles.headline}>What gets measured,<br/>gets managed.</Typography>
         <div style={styles.wrapper} id="devices" className={'hidden'}>
           <img src="/images/screenshots/1-xdr-dashboard.png" style={styles.screen} className="screen"/>
           <img src="/images/screenshots/5-ipad-report.png" style={styles.tablet} className="tablet"/>
@@ -120,147 +124,149 @@ export default function Product() {
           #devices.show .tablet { opacity: 1; margin-right: 0; transition: all 0.8s ease-in-out 0.2s; }
           #devices.show .mobile { opacity: 1; margin-left: 0; transition: all 0.5s ease-in-out 0.4s; }
         `}</style>
-        <Stack spacing={10} style={{ marginTop: theme.spacing(6), marginBottom: theme.spacing(12) }}>
-          <Grid container justifyContent="space-around" spacing={1}>
-            <Grid item xs={4} style={styles.title}>
-              <Typography variant="h5">Write down each transaction to have an overview of your month.</Typography>
+        <Stack spacing={{xs: 2, sm: 6, md: 10 }} style={{ marginTop: theme.spacing(6), marginBottom: theme.spacing(12) }}>
+          <Grid container justifyContent="space-around">
+            <Grid item xs={5} sm={5} md={4} style={styles.title}>
+              <Typography sx={styles.subheadline}>Write down each transaction to have an overview of your month.</Typography>
             </Grid>
-            <Grid item xs={4} style={styles.title}>
-              <Typography variant="h5">Categorize them to quickly see where money goes.</Typography>
+            <Grid item xs={5} sm={5} md={4} style={styles.title}>
+              <Typography sx={styles.subheadline}>Categorize them to quickly see where money goes.</Typography>
             </Grid>
           </Grid>
-          <Grid container justifyContent="space-around" spacing={1}>
-            <Grid item xs={4} style={styles.title}>
-              <Typography variant="h5">Convert them all in a unique currency.</Typography>
+          <Grid container justifyContent="space-around">
+            <Grid item xs={5} sm={5} md={4} style={styles.title}>
+              <Typography sx={styles.subheadline}>Convert them all in a unique currency.</Typography>
             </Grid>
-            <Grid item xs={4} style={styles.title}>
-              <Typography variant="h5">Synchronize between all your devices.</Typography>
+            <Grid item xs={5} sm={5} md={4} style={styles.title}>
+              <Typography sx={styles.subheadline}>Synchronize between all your devices.</Typography>
             </Grid>
           </Grid>
 
         </Stack>
         <Stack spacing={12} style={{ marginTop: theme.spacing(6), marginBottom: theme.spacing(12) }}>
 
-          <Grid container spacing={8} justifyContent="center">
-            <Grid item md={12} lg={12}>
+          <Grid container spacing={{ xs:1, sm:4, md: 8}} justifyContent="center">
+            <Grid item xs={12}>
               <h2 style={{ textAlign: 'center' }}><FormatQuoteIcon style={{ marginRight: 8 }} fontSize="large"/>Keep it simple and stupid</h2>
             </Grid>
-            <Grid item md={4}>
+            <Grid item xs={12} sm={6} md={4}>
               <h3>Dashboard</h3>
               <p>Keep an eye on your latest spending, to be more aware and keep control.</p>
             </Grid>
-            <Grid item md={4}>
+            <Grid item xs={12} sm={6} md={4}>
               <h3>Transactions</h3>
               <p>A full list of transactions often allows you realise we underestimate small things.</p>
             </Grid>
-            <Grid item md={4}>
+            <Grid item xs={12} sm={6} md={4}>
               <h3>Categories</h3>
               <p>You might be spending more on beers than you think, find out quickly.</p>
             </Grid>
-            <Grid item md={4}>
+            <Grid item xs={12} sm={6} md={4}>
               <h3>Changes</h3>
               <p>Have a realistic exchange rate by keeping track of your exhanges.</p>
             </Grid>
-            <Grid item md={4}>
+            <Grid item xs={12} sm={6} md={4}>
               <h3>Report</h3>
               <p>Pick a range of date, and see how things went.</p>
             </Grid>
           </Grid>
+
           {/* CAROUSEL, showing different page of the app */}
-          <Grid container spacing={8} justifyContent="center" alignItems="center">
+          <Grid container justifyContent="space-around" alignItems="center">
             
-            <Grid item md={5}>
-              <img src="/images/screenshots/browser-changes.png" className=""/>
+            <Grid item xs={12} md={5}>
+              <img src="/images/screenshots/browser-changes.png" style={{ maxWidth: '50vw', width: '100%' }}/>
             </Grid>
-            <Grid item md={6}>
+            <Grid item xs={12} md={6}>
               <h3>Why tracking manually exchange rate ?</h3>
               <p>When exchanging currency at an ATM or an exchanger booth, the applied rate never really match our expectation and often include hidden fees. To provide an accurate exchange rate, manually write down each exchanges to let the application know the actual rate.</p>
               <p>All transactions can then be displayed in a currency of your choice, which can be especially helpful for those who travel frequently or need to track expenses in multiple currencies.</p>
             </Grid>
           </Grid>
 
-          <Grid container justifyContent="space-around" spacing={2}>
+          <Grid container justifyContent="space-around">
 
-            <Grid item md="auto">
+            <Grid item xs={12} md={'auto'}>
               <h3>Privacy by design</h3>
             </Grid>
-            <Grid item md={7} lg={7}>
+            <Grid item xs={12} md={7} lg={7}>
               <p>We provides secure end-to-end encryption within an open source code base to protect the confidentiality of your data. This ensures that only you can access and read them.</p>
             </Grid>
 
           </Grid>
 
-          <Grid container spacing={2}>
-
-            <Grid item md={12} lg={12}>
-              <h2 style={{ textAlign: 'center' }}>Other Features</h2>
-            </Grid>
-
-            <Grid item md={3} lg={3}>
-              <Paper variant="outlined" style={styles.small}>
-              👥 Multi-account
-              </Paper>
-            </Grid>
-
-            <Grid item md={3} lg={3}>
-              <Paper variant="outlined" style={styles.small}>
-              💱 Convertor
-              </Paper>
-            </Grid>
-
-            <Grid item md={3} lg={3}>
-              <Paper variant="outlined" style={styles.small}>
-              🌗 Dark mode
-              </Paper>
-            </Grid>
-
-            <Grid item md={3} lg={3}>
-              <Paper variant="outlined" style={styles.small}>
-              📥 Import/export
-              </Paper>
-            </Grid>
-
-            <Grid item md={3} lg={3}>
-              <Paper variant="outlined" style={styles.small}>
-              💚 Opensource
-              </Paper>
-            </Grid>
-
-            <Grid item md={3} lg={3}>
-              <Paper variant="outlined" style={styles.small}>
-              👩‍💻 API access for developers
-              </Paper>
-            </Grid>
-
-            <Grid item md={6} lg={6}>
-              <Paper variant="outlined" style={styles.small}>
-              🏠 Self-hostable
-              </Paper>
-            </Grid>
-
-
-            <Grid item md={6} lg={6}>
-              <Paper variant="outlined" style={styles.small}>
-              🔁 Recurant transactions
-              </Paper>
-            </Grid>
-
-            <Grid item md={3} lg={3}>
-              <Paper variant="outlined" style={styles.small}>
-              🔎 Search
-              </Paper>
-            </Grid>
-
-            <Grid item md={3} lg={3}>
-              <Paper variant="outlined" style={styles.small}>
-              🏝️ Offline capacity
-              </Paper>
-            </Grid>
-          </Grid>
 
         </Stack>
+        
+        <Grid container spacing={2}>
 
-        <Stack direcion="column" justifyContent="center" alignItems="center" spacing={2}  mt={theme.spacing(6)} mb={theme.spacing(6)}>
+          <Grid item xs={12}>
+            <h2 style={{ textAlign: 'center' }}>Other Features</h2>
+          </Grid>
+
+          <Grid item xs={6} sm={4} md={3}>
+            <Paper variant="outlined" style={styles.small}>
+            👥 Multi-account
+            </Paper>
+          </Grid>
+
+          <Grid item xs={6} sm={4} md={3}>
+            <Paper variant="outlined" style={styles.small}>
+            💱 Convertor
+            </Paper>
+          </Grid>
+
+          <Grid item xs={6} sm={4} md={3}>
+            <Paper variant="outlined" style={styles.small}>
+            🌗 Dark mode
+            </Paper>
+          </Grid>
+
+          <Grid item xs={6} sm={4} md={3}>
+            <Paper variant="outlined" style={styles.small}>
+            📥 Import/export
+            </Paper>
+          </Grid>
+
+          <Grid item xs={6} sm={4} md={3}>
+            <Paper variant="outlined" style={styles.small}>
+            💚 Opensource
+            </Paper>
+          </Grid>
+
+          <Grid item xs={6} sm={4} md={3}>
+            <Paper variant="outlined" style={styles.small}>
+            👩‍💻 API access for developers
+            </Paper>
+          </Grid>
+
+          <Grid item xs={6} sm={4} md={6} lg={6}>
+            <Paper variant="outlined" style={styles.small}>
+            🏠 Self-hostable
+            </Paper>
+          </Grid>
+
+
+          <Grid item xs={6} sm={4} md={6} lg={6}>
+            <Paper variant="outlined" style={styles.small}>
+            🔁 Recurant transactions
+            </Paper>
+          </Grid>
+
+          <Grid item xs={6} sm={4} md={3} lg={3}>
+            <Paper variant="outlined" style={styles.small}>
+            🔎 Search
+            </Paper>
+          </Grid>
+
+          <Grid item xs={6} sm={4} md={3} lg={3}>
+            <Paper variant="outlined" style={styles.small}>
+            🏝️ Offline capacity
+            </Paper>
+          </Grid>
+        </Grid>
+
+        <Stack direcion="column" justifyContent="center" alignItems="center" spacing={2}  mt={theme.spacing(18)} mb={theme.spacing(6)}>
           <h2 style={{ marginBottom: 8 }}>Quickly find out if it works for you !</h2>
           <p style={{ textAlign: 'center' }}>We made it very easy to try our app - you can use it directly in your browser without needing to create an account.</p>
           <Button href="https://app.seven23.io" variant="contained" disableElevation>Try it now</Button>

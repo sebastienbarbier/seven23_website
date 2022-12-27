@@ -41,8 +41,8 @@ export default function Layout({ children, home }) {
               <Button href="/pricing">Pricing</Button>
               <Button href="/resources">Resources</Button>
               <Button href="/about-us">About us</Button>
-              <Divider orientation="vertical" style={{ height: 34 }}/>
-              <IconButton><DarkModeOutlinedIcon  color="primary" /></IconButton>
+            {/*  <Divider orientation="vertical" style={{ height: 34 }}/>
+              <IconButton><DarkModeOutlinedIcon  color="primary" /></IconButton>*/}
             </Stack>
           </Stack>
         </Container>

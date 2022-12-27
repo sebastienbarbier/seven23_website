@@ -147,34 +147,34 @@ export default function Product() {
             </Grid>
             <Grid item md={4}>
               <h3>Dashboard</h3>
-              <p>The application open on the dashboard which provide a quick view of the current situation.</p>
+              <p>Keep an eye on your latest spending, to be more aware and keep control.</p>
             </Grid>
             <Grid item md={4}>
               <h3>Transactions</h3>
-              <p>Use the report view to analyse your spending for a specific date range.</p>
+              <p>A full list of transaction often makes you realise you forget little things. No more.</p>
             </Grid>
             <Grid item md={4}>
               <h3>Categories</h3>
-              <p>Use the report view to analyse your spending for a specific date range.</p>
+              <p>You might be spending more on beer than you think, find out quickly.</p>
             </Grid>
             <Grid item md={4}>
               <h3>Changes</h3>
-              <p>Use the report view to analyse your spending for a specific date range.</p>
+              <p>Have a realistic exchange rate by keeping track of your exhanges.</p>
             </Grid>
             <Grid item md={4}>
               <h3>Report</h3>
-              <p>Use the report view to analyse your spending for a specific date range.</p>
+              <p>Pick a range of date, and see how things went.</p>
             </Grid>
           </Grid>
           {/* CAROUSEL, showing different page of the app */}
           <Grid container spacing={8} justifyContent="center" alignItems="center">
             
             <Grid item md={5}>
-              <img src="/images/screenshots/5-ipad-report.png" className="tablet"/>
+              <img src="/images/screenshots/2-changes-browser.png" className=""/>
             </Grid>
             <Grid item md={6}>
-              <h3>Dynamic Exchange rate</h3>
-              <p>When exchanging currency at an ATM or an exchanger shop, the applied rate never really match our expectation and often include hidden fees. To provide an accurate exchange rate, manually provide each exchange to let the application know how the actual rate.</p>
+              <h3>Why tracking manually exchange rate ?</h3>
+              <p>When exchanging currency at an ATM or an exchanger booth, the applied rate never really match our expectation and often include hidden fees. To provide an accurate exchange rate, manually provide each exchange to let the application know how the actual rate.</p>
             </Grid>
           </Grid>
 

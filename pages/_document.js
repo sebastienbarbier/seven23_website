@@ -17,7 +17,7 @@ export default class MyDocument extends Document {
                     <meta name="description" content="Fully manual budget app to track your expenses. Completely opensource, with privacy by design." />
                     {/* PWA primary color */}
                     <meta name="theme-color" content={theme.palette.primary.main} />
-                    <link rel="shortcut icon" href="/favicon.ico" />
+                    <link rel="shortcut icon" type="image/svg" href="/favicon.svg" />
                     {/* Inject MUI styles first to match with the prepend: true configuration. */}
                     { this.props.emotionStyleTags }
                     <style jsx global>{``}</style>

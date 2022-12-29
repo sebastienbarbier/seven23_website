@@ -179,7 +179,7 @@ export default function Product() {
             </Grid>
             <Grid item xs={12} md={6}>
               <h3>Why manually tracking exchange rate ?</h3>
-              <p>When exchanging currency at an ATM or an exchanger booth, the applied rate never really match our expectation and often include hidden fees. To provide an accurate exchange rate, manually write down each exchanges to let the application know the actual rate.</p>
+              <p>When exchanging currencies at an ATM or an exchanger booth, the applied rate never really match our expectation and often include hidden fees. To provide an accurate exchange rate, manually write down each exchanges to let the application know the actual rate.</p>
               <p>All transactions can then be displayed in a currency of your choice, which can be especially helpful for those who travel frequently or need to track expenses in multiple currencies.</p>
             </Grid>
           </Grid>

@@ -95,7 +95,7 @@ export default function Home() {
 
         <Grid container spacing={2} mt={theme.spacing(4)}>
           <Grid item xs={12}>
-            <p><strong>Seven23</strong> is designed to answer the very simple question: <span style={{fontStyle: 'italic'}}>'How much did I spend on </span>🤬<span  style={{fontStyle: 'italic'}}> this month</span>'. The idea is not to track your portfolio, how much is saved or left, but simply to understand where money goes and identify potential cognitive biases.</p>
+            <p><strong>Seven23</strong> is designed to answer the very simple question: <span style={{fontStyle: 'italic'}}>'How much did I spend on <span className="censored">drinks</span> this month</span>'. The idea is not to track your portfolio, how much you saved or is left, but to understand where money goes and identify potential cognitive biases.</p>
           </Grid>
 
           <Grid item xs={12} container direction="column" justifyContent="center" alignItems="center"  mt={theme.spacing(1)}>

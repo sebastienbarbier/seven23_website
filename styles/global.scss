@@ -11,3 +11,29 @@ html{
         max-width: 100%;
     }
 }
+
+
+.censored {
+    position: relative;
+    color: transparent;
+
+    &:after {
+        background: rgba(228, 228, 228, 1);
+        position: absolute;
+        content: '';
+        transform: rotate(-5deg);
+        top: 0; left: 0; right: 0; bottom: 0;
+    }
+
+    &:before {
+        position: absolute;
+        content: '🤬';
+        z-index: 999;
+        font-style: normal;
+        font-size: 1.3em;
+        text-align: center;
+        opacity: 1;
+        color: black;
+        top: -0.3em; left: 0; right: 0; bottom: 0;
+    }
+}

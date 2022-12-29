@@ -5,6 +5,8 @@ import * as React from 'react';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 
+import { styled } from '@mui/material/styles';
+
 import Layout, { siteTitle } from '../components/layout'
 import Date from '../components/date'
 
@@ -14,11 +16,17 @@ import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import Paper from '@mui/material/Paper'
 import Divider from '@mui/material/Divider'
+import Typography from '@mui/material/Typography'
 
 import TwitterIcon from '@mui/icons-material/Twitter';
 import BugReportIcon from '@mui/icons-material/BugReport';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import HttpIcon from '@mui/icons-material/Http';
+
+import MuiAccordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const styles = {
   icon: {
@@ -28,6 +36,15 @@ const styles = {
     boxShadow: 'rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;'
   }
 };
+
+const Accordion = styled((props) => (
+  <MuiAccordion disableGutters elevation={0} square {...props} />
+))(({ theme }) => ({
+  '&:before': {
+    display: 'none',
+  },
+}));
+
 export default function Resources({ terms }) {
   return (
     <Layout>
@@ -69,6 +86,40 @@ export default function Resources({ terms }) {
                 <Button href="https://github.com/sebastienbarbier/seven23_server/issues" startIcon={<BugReportIcon />}>Bug tracker</Button>
               </Stack>
             </Stack>
+
+            <h3>Assets</h3>
+
+            <Accordion style={{ boxShadow: 'None', '&:before': { display: 'none' } }}>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                <Typography>Logo and Icons</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Grid container alignItems="flex-start" spacing={4} style={{ maxWidth: 400 }}>
+                  <Grid item xs={12} sm={6}>
+                    <a href="/images/svg/seven23.svg" download><img src="/images/svg/seven23.svg" alt="" /></a>
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <a href="/images/svg/seven23_white.svg" download><img src="/images/svg/seven23_white.svg" alt="" style={{ background: '#333' }} /></a>
+                  </Grid>
+                  <Grid item xs={4} sm={4}>
+                    <a href="/images/svg/seven23_logo.svg" download><img src="/images/svg/seven23_logo.svg" alt="" /></a>
+                  </Grid>
+                  <Grid item xs={4} sm={4}>
+                    <a href="/images/svg/seven23_round.svg" download><img src="/images/svg/seven23_round.svg" alt="" /></a>
+                  </Grid>
+                  <Grid item xs={4} sm={4}>
+                    <a href="/images/svg/seven23_square.svg" download><img src="/images/svg/seven23_square.svg" alt="" /></a>
+                  </Grid>
+                  <Grid item xs={12} style={{ textAlign: 'center' }}><Typography variant="caption" gutterBottom>(Click to download)</Typography></Grid>
+                </Grid>
+              </AccordionDetails>
+            </Accordion>
+
+
           </Grid>
           <Divider orientation="vertical" flexItem />
           <Grid item xs={12} lg={4}>

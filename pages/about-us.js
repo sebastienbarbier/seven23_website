@@ -16,6 +16,8 @@ import Paper from '@mui/material/Paper'
 import Typography from '@mui/material/Typography'
 import Divider from '@mui/material/Divider'
 
+import Box from '@mui/material/Box';
+
 import Avatar from '@mui/material/Avatar'
 
 import IconButton from '@mui/material/IconButton';
@@ -32,25 +34,33 @@ export default function AboutUs() {
 
         <h2>About us</h2>
 
+
         <Grid container spacing={4}>
-          <Grid item xs={12} md={4} style={{ paddingRight: 20 }}>
+          <Grid item xs={12}>
             <p>This project is not yet sustainable and fully maintained by volonteers. It is <strong>open source</strong>, and free to use under a permissive <strong>MIT licence</strong>.</p>
           </Grid>
-          <Divider orientation="vertical" flexItem />
+        </Grid>
+
+        <h3>Main contributors</h3>
+
+
+        <Grid container spacing={4} justifyContent="center">
           <Grid item xs={12} md={7}>
-            <Stack spacing={4}>
-              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 12, sm: 4 }} alignItems={{ xs: 'flex-start', sm: 'center' }} >
+            <Paper variant="outlined" sx={{ padding: { xs: 2, sm: 0 }}}>
+              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 4, sm: 4 }} alignItems={{ xs: 'flex-start', sm: 'center' }} >
                 <Avatar
                   alt="Sébastien Barbier"
                   src="/images/avatar/sebastienbarbier_profile_256.jpg"
-                  sx={{ width: 160, height: 160 }}
+                  sx={{ width: 192, height: 192 }}
                   variant="rounded"
                 />
-                <Stack direction="column" spacing={0}>
-                  <Typography variant="h6">Sébastien Barbier</Typography>
-                  <Typography variant="subtitle2">Cofounder</Typography>
-                  <p>Sébastien is a Cloud Software Architect from France currently based in Zurich.</p>
-                  <Stack direction="row" spacing={1}>
+                <Stack direction="column" spacing={0} sx={{ pt: {xs: 0, sm: 1}, pb: {xs: 0, sm: 1} }}>
+                  <Box sx={{ pb: 1 }}>
+                    <Typography variant="h6">Sébastien Barbier</Typography>
+                    <Typography variant="subtitle2">Cofounder</Typography>
+                  </Box>
+                  <Typography variant="body2">Sébastien is a Cloud Software Architect from France currently based in Zurich.</Typography>
+                  <Stack direction="row" spacing={1} sx={{ pt: 1 }}>
                     <IconButton href="https://www.linkedin.com/in/sebbarbier/">
                       <LinkedInIcon />
                     </IconButton>
@@ -66,7 +76,7 @@ export default function AboutUs() {
                   </Stack>
                 </Stack>
               </Stack>
-            </Stack>  
+            </Paper>
           </Grid>
         </Grid>
 

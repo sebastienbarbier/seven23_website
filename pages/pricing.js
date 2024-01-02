@@ -60,13 +60,21 @@ export default function Pricing({ terms }) {
           <Grid item xs={12} md={5} lg={4}>
             <h2>Pricing</h2>
             <Paper variant="outlined" style={{ padding: '6px 20px', margin: '30px 0 0'}}>
-              <Stack spacing={2} direciton="column" justifyContent="center">
+              <Stack direction="column" justifyContent="center">
 
-                <p style={{ fontSize: 42, lineHeight: 0.7, marginBottom: 10, textAlign: 'center' }}>
-                  {terms ? terms.products[0].price : '--'}<span>€</span>
-                  <br/>
-                  <small style={{ fontSize: 12, textTransform: 'uppercase', fontWeight: 600, opacity: 0.8}}>per year</small>
-                </p>
+                <Stack direction="row" spacing={0} alignItems="center" justifyContent="space-around" sx={{pt: 2}}>
+                  <p style={{ fontSize: 42, lineHeight: 0.7 }}>
+                    {terms && terms.products ? terms.products[0].price : '4.5'}<span>€</span>
+                    <br/>
+                    <small style={{ fontSize: 12, textTransform: 'uppercase', fontWeight: 600, opacity: 0.8}}>per month</small>
+                  </p>
+
+                  <p style={{ fontSize: 42, lineHeight: 0.7 }}>
+                    {terms && terms.products ? terms.products[1].price : '45'}<span>€</span>
+                    <br/>
+                    <small style={{ fontSize: 12, textTransform: 'uppercase', fontWeight: 600, opacity: 0.8}}>per year</small>
+                  </p>
+                </Stack>
 
                 <Stack direction="column" spacing={0} divider={<Divider/>}>
                   <p style={{ display: 'inline', verticalAlign: 'bottom', alignItems: 'bottom' }}>

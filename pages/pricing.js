@@ -64,13 +64,13 @@ export default function Pricing({ terms }) {
 
                 <Stack direction="row" spacing={0} alignItems="center" justifyContent="space-around" sx={{pt: 2}}>
                   <p style={{ fontSize: 42, lineHeight: 0.7 }}>
-                    {terms && terms.products ? terms.products[0].price : '4.5'}<span>€</span>
+                    {terms && terms.stripe_prices ? terms.stripe_prices[0].price : '--'}<span>€</span>
                     <br/>
                     <small style={{ fontSize: 12, textTransform: 'uppercase', fontWeight: 600, opacity: 0.8}}>per month</small>
                   </p>
 
                   <p style={{ fontSize: 42, lineHeight: 0.7 }}>
-                    {terms && terms.products ? terms.products[1].price : '45'}<span>€</span>
+                    {terms && terms.stripe_prices ? terms.stripe_prices[1].price : '--'}<span>€</span>
                     <br/>
                     <small style={{ fontSize: 12, textTransform: 'uppercase', fontWeight: 600, opacity: 0.8}}>per year</small>
                   </p>
